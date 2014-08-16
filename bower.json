@@ -1,0 +1,18 @@
+{
+  "name": "tribunedigital-fsbo",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "nerdery-reset-css": "./tools/cache/nerdery-reset-css",
+    "requirejs": "2.1.9",
+    "jquery": "components/jquery#1.11.0",
+    "modernizr": "components/modernizr#2.6.2",
+    "nerdery-auto-replace": "./tools/cache/nerdery-auto-replace",
+    "nerdery-external-links": "./tools/cache/nerdery-external-links",
+    "nerdery-function-bind": "./tools/cache/nerdery-function-bind",
+    "nerdery-has-js": "./tools/cache/nerdery-has-js",
+    "angular": "~1.2.20",
+    "requirejs-plugins": "~1.0.2"
+  },
+  "devDependencies": {}
+}

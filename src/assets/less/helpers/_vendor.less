@@ -1,0 +1,112 @@
+// First argument is the default if no arguments are passed in.
+// One argument is accepted.
+.border-radius(@argument: 4px) {
+    -webkit-border-radius: @argument;
+    -moz-border-radius: @argument;
+    border-radius: @argument;
+}
+
+// First argument is the default if no arguments are passed in.
+// Any number of arguments are accepted.
+// When the mixin is used, add a trailing semi-colon to the comma-separated list
+// so each is passed in as separate arguments.
+.box-shadow(@arguments: inset 0 2px 1px rgba(0, 0, 0, 0.075); ...) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+
+// Any number of arguments are accepted.
+// When the mixin is used, add a trailing semi-colon to the comma-separated list
+// so each is passed in as separate arguments.
+.transition(...) {
+    -webkit-transition: @arguments;
+    -moz-transition: @arguments;
+    -o-transition: @arguments;
+    transition: @arguments;
+}
+
+// One argument is accepted.
+// Default value is border-box if no argument is passed in.
+.box-sizing(@box-sizing: border-box) {
+    -webkit-box-sizing: @box-sizing;
+    -moz-box-sizing: @box-sizing;
+    box-sizing: @box-sizing;
+}
+
+// One argument is accepted.
+.appearance(@argument) {
+    -webkit-appearance: @argument;
+    -moz-appearance: @argument;
+}
+
+// Form input placeholder default color.
+// A single argument is accepted.
+// Default is @COLORS_MEDIUM_GRAY if no argument is passed in.
+.placeholder(
+    @color: @COLORS_MEDIUM_GRAY;
+    @text-transform: none) {
+    &::-webkit-input-placeholder {
+        color: @color;
+        text-transform: @text-transform;
+    }
+
+    &:-moz-placeholder {
+        color: @color;
+        text-transform: @text-transform;
+    }
+
+    &::-moz-placeholder {
+        color: @color;
+        text-transform: @text-transform;
+    }
+
+    &:-ms-input-placeholder {
+        color: @color;
+        text-transform: @text-transform;
+    }
+}
+
+// Animations:
+.animate(@arguments; ...) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    -o-animation: @arguments;
+    animation: @arguments;
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spin {
+    from {
+        -o-transform: rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

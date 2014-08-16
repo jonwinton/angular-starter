@@ -1,0 +1,71 @@
+/*doc
+---
+title: Media
+name: media
+category: layout
+---
+
+Media documentation...
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.media`                    | Base class.
+`.media_stacked`            | Extension that stacks the media and content.
+`.media-md`                 | Child element. Contains a media element (`img` or `video`) of any width.
+`.media-bd`                 | Child element. Creates a new block formatting context for it's content.
+
+```html_example
+<div class="media">
+    <div class="media-md">
+        <img src="//placehold.it/60x60" alt="" />
+    </div>
+    <div class="media-bd">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quis, culpa. Tempore quam sed, repellendus porro dicta nesciunt facere quia molestiae amet ipsa, dolores adipisci saepe temporibus quod, eius nihil.</p>
+    </div>
+</div>
+<div class="media">
+    <div class="media-md">
+        <img src="//placehold.it/160x90" alt="" />
+    </div>
+    <div class="media-bd">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quis, culpa. Tempore quam sed, repellendus porro dicta nesciunt facere quia molestiae amet ipsa, dolores adipisci saepe temporibus quod, eius nihil.</p>
+    </div>
+</div>
+```
+
+## Media Stacked:
+
+```html_example
+<div class="media media_stacked">
+    <div class="media-md">
+        <img src="//placehold.it/400x200" alt="" />
+    </div>
+    <div class="media-bd">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quis, culpa. Tempore quam sed, repellendus porro dicta nesciunt facere quia molestiae amet ipsa, dolores adipisci saepe temporibus quod, eius nihil.</p>
+    </div>
+</div>
+```
+*/
+
+.media {
+    .clearfix();
+}
+
+.media-md {
+    float: left;
+    margin-right: 20px;
+}
+
+.media-md_tight {
+    margin-right: 8px;
+}
+
+.media-bd {
+    overflow: hidden;
+}
+
+.media_stacked > .media-md {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 15px;
+}

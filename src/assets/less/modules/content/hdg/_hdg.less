@@ -1,0 +1,86 @@
+/*doc
+---
+title: Heading
+name: hdg
+category: content
+---
+
+The heading content object defines a base set of font properties, and provides extensions for various heading levels. This object can be applied to any element, but should be reserved to `h` tags, i.e. `<h1>`. Box-model properties are not applied at this level, only font styling. Box model properties should be defined at the container object level.
+
+Class             | Description
+----------------- | ---------------------------------------------------------------
+`.hdg`            | Base object for heading elements: `<h1>`, `<h2>`, etc.
+`.hdg_1`         | Base object extension
+`.hdg_2`         | Base object extension
+`.hdg_3`         | Base object extension
+
+```html_example
+<h1 class="hdg hdg_1">Heading 1</h1>
+<h2 class="hdg hdg_2">Heading 2</h2>
+<h3 class="hdg hdg_3">Heading 3</h3>
+```
+
+## Heading Mixins: Colors
+Modifying classes to change the color of headings.
+
+Class                       | Description
+--------------------------- | -----------------------------------------------------
+`.mix-hdg_dark`             | Mixin for a dark heading.
+`.mix-hdg_darkGray`         | Mixin for a dark gray heading.
+
+```html_example
+<h1 class="hdg hdg_1 mix-hdg_dark">Dark Heading</h1>
+<h1 class="hdg hdg_1 mix-hdg_darkGray">Dark Gray Heading</h1>
+```
+
+## Heading Mixins: Text Variations
+Modifying classes to change the color of headings.
+
+Class                       | Description
+--------------------------- | -----------------------------------------------------
+`.mix-hdg_bold`             | Mixin for a bold heading.
+`.mix-hdg_upper`            | Mixin for an uppercase heading.
+
+```html_example
+<h1 class="hdg hdg_1 mix-hdg_bold">Bold Heading</h1>
+<h1 class="hdg hdg_1 mix-hdg_upper">Uppercase Heading</h1>
+```
+
+*/
+
+.hdg {
+    .font();
+}
+
+.hdg_1 {
+    font-size: @HDG_H1;
+    line-height: 1.25; /* 30px (line-height) / 24px (font-size) = 1.25 */
+}
+
+.hdg_2 {
+    font-size: @HDG_H2;
+    line-height: 1.3; /* 26px (line-height) / 20px (font-size) = 1.3 */
+}
+
+.hdg_3 {
+    font-size: @HDG_H3;
+    line-height: 1.375; /* 22px (line-height) / 16px (font-size) = 1.375 */
+}
+
+/* Heading Mixins: Colors */
+.mix-hdg_dark {
+    color: #000000;
+}
+
+.mix-hdg_darkGray {
+    color: @COLORS_DARK_GRAY;
+}
+
+/*Heading Mixins: Text Variations*/
+.mix-hdg_bold {
+    font-weight: bold;
+}
+
+.mix-hdg_upper {
+    text-transform: uppercase;
+}

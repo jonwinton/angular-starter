@@ -1,0 +1,46 @@
+/*doc
+---
+title: Select
+name: select
+category: content
+---
+
+Content styles for `<select>` form elements.
+
+Class                | Description
+-------------------- | ---------------------------------------------------------------
+`.select`            | base object for `<select>` elements.
+
+```html_example
+<select class="select" name="">
+    <option value="">Default Select</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+</select>
+```
+*/
+
+@import "../_helpers";
+
+.select {
+    width: 100%;
+    height: @INPUT_SIZE_DEFAULT; // Set to match .input when height and padding are combined.
+    padding-left: 14px;
+    padding-right: 22px; /* leave enough space for the background image. */
+    border: 1px solid @COLORS_FORM_INPUT_BORDER_DEFAULT;
+    color: @COLORS_DEFAULT;
+    background: @COLORS_FORM_INPUT_BACKGROUND url("../media/images/bg-select.png") no-repeat right 50%;
+    background-size: 14px auto;
+    .font();
+    .border-radius();
+    .box-sizing();
+    .input_transition();
+    .placeholder();
+    .appearance(none);
+}
+
+.select:focus {
+    outline: 0;
+    border-color: @COLORS_FORM_INPUT_BORDER_FOCUS;
+    .input_focus_box_shadow();
+}

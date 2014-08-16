@@ -1,0 +1,67 @@
+/*doc
+---
+title: Form
+name: form
+category: container
+---
+
+Form documentation.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.form`                     | Base class.
+`.form-hd`                  | Child element.
+`.form-hd-title`            | Child element title.
+`.form-fieldset`            | Child element. Repeat the `<fieldset>` for each separate grouping of form elements.
+`.form-fieldset-legend`     | Child element legend. Each `<fieldset>` requires a `<legend>`.
+`.form-actions`             | Child element. Form buttons and other actions go here.
+`.form-ft`                  | Child element. Any additional details or information the form should contain goes here.
+
+```
+<form class="form" id="" action="" method="">
+    <!-- Optional .form-hd element. -->
+    <div class="form-hd">
+        <div class="form-hd-title">
+            <!-- Content here. -->
+        </div>
+    </div>
+    <fieldset class="form-fieldset">
+        <legend class="form-fieldset-legend">Legend</legend>
+        <!-- Fields here. -->
+    </fieldset>
+    <fieldset class="form-fieldset">
+        <legend class="form-fieldset-legend">Legend</legend>
+        <!-- Fields here. -->
+    </fieldset>
+    <div class="form-actions">
+        <!-- Submit button here. -->
+    </div>
+    <!-- Optional .form-ft element. -->
+    <div class="form-ft">
+        <!-- Content here. -->
+    </div>
+</form>
+```
+*/
+
+.form {
+    .font(@size: @FONT_SIZE_SMALL);
+}
+
+.form-hd {
+    padding-bottom: 21px;
+    text-align: center;
+    font-size: @FONT_SIZE_DEFAULT;
+}
+
+.form-hd-title {
+    margin-bottom: 7px;
+}
+
+.form-actions {
+    margin-top: 15px;
+}
+
+.form-ft {
+    margin-top: 15px;
+}

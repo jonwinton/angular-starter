@@ -1,0 +1,34 @@
+/*doc
+---
+title: Vertical List
+name: vList
+category: layout
+---
+
+The Vertical List layout object controls the vertical separation of list items. This object has a predictable markup structure. The `.vList` base class is applied to either an `<ul>` or `<ol>` element. These elements only support one direct child, the `<li>`.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.vList`                    | Base class.
+`.vList_sm`                 | Base extension altering the vertical rhythm.
+
+```
+<ul class="vList">
+    <li>
+        <!-- Content here. -->
+    </li>
+    <li>
+        <!-- Content here. -->
+    </li>
+</ul>
+```
+*/
+
+.vList > * + * {
+    margin-top: 10px;
+    .clearfix();
+}
+
+.vList_sm > * + * {
+    margin-top: 18px;
+}

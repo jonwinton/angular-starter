@@ -1,0 +1,106 @@
+/*doc
+---
+title: Blocks
+name: blocks
+category: layout
+---
+
+The Blocks layout object sets up a grid of equal width elements of any quantity.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.blocks`                   | Base class.
+`.blocks_2up`               | Base extension defining a 2-up grid of blocks.
+`.mix-blocks_vertSm`        | Mixin to set vertical ryhthm between rows of blocks.
+`.mix-blocks_textCenter`    | Mixin to center text in blocks
+
+## Basic blocks:
+
+```html_example
+<ul class="blocks">
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+</ul>
+```
+
+## 2-up blocks:
+
+```html_example
+<ul class="blocks blocks_2up">
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+</ul>
+```
+
+## 2-up blocks with vertical ryhthm:
+
+```html_example
+<ul class="blocks blocks_2up mix-blocks_vertSm">
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+</ul>
+```
+
+## 2-up blocks with centered text:
+
+```html_example
+<ul class="blocks blocks_2up mix-blocks_textCenter">
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+    <li>
+        <div class="docSwatch">Block</div>
+    </li>
+</ul>
+```
+
+*/
+
+.blocks {
+    .blocksOffset(@MEASUREMENTS_BLOCKS_GUTTER);
+    .clearfix();
+    font-size: 0; /* removes white space between children */
+}
+
+.blocks > * {
+    display: inline-block;
+    margin-left: @MEASUREMENTS_BLOCKS_GUTTER;
+    .blocksWidth(1, @MEASUREMENTS_BLOCKS_GUTTER);
+    vertical-align: top;
+    .font(); /* resets the default font treatment. */
+}
+
+.blocks_2up > * {
+    .blocksWidth(2, @MEASUREMENTS_BLOCKS_GUTTER);
+}
+
+/* Blocks mixins: Vertical rhythm */
+.mix-blocks_vertSm > * {
+    margin-bottom: 18px;
+}
+
+/* Blocks mixins: Center */
+.mix-blocks_textCenter {
+    text-align: center;
+}

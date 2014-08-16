@@ -1,0 +1,25 @@
+{
+  "name": "modernizr",
+  "version": "2.6.2",
+  "description": "Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user's browser.",
+  "homepage": "http://modernizr.com/",
+  "keywords": [
+    "html5",
+    "css3",
+    "browser",
+    "feature detection"
+  ],
+  "author": "Modernizr <http://modernizr.com>",
+  "scripts": [
+    "modernizr.js"
+  ],
+  "_release": "2.6.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.6.2",
+    "commit": "c470050f9906b1197ddaa7aace41f73eba5f4ecf"
+  },
+  "_source": "git://github.com/components/modernizr.git",
+  "_target": "2.6.2",
+  "_originalSource": "components/modernizr"
+}

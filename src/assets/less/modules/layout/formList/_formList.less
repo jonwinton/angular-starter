@@ -1,0 +1,49 @@
+/*doc
+---
+title: Form List
+name: formList
+category: layout
+---
+
+The Form List layout object controls the vertical separation of form elements. An `<ol>` should be used since form elements typically have a specific order.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.formList`                 | Base class.
+
+```html_example
+<ol class="formList">
+    <li>
+        <label class="label" for="">Label</label>
+        <input class="input" type="text" id="" name="" placeholder="text" />
+    </li>
+    <li>
+        <label class="label" for="">Label</label>
+        <input class="input" type="text" id="" name="" placeholder="text" />
+    </li>
+</ol>
+```
+
+## An example with visually hidden form labels.
+
+```html_example
+<ol class="formList">
+    <li>
+        <label class="label isVisuallyHidden" for="">Label</label>
+        <input class="input" type="text" id="" name="" placeholder="text" />
+    </li>
+    <li>
+        <label class="label isVisuallyHidden" for="">Label</label>
+        <input class="input" type="text" id="" name="" placeholder="text" />
+    </li>
+</ol>
+```
+*/
+
+.formList {
+    .clearfix();
+}
+
+.formList > * + * {
+    margin-top: 10px;
+}

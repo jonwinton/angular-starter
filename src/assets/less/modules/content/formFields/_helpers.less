@@ -1,0 +1,23 @@
+// ------------------------------------------------------------------------
+// FormFields Helpers
+// ------------------------------------------------------------------------
+@INPUT_SIZE_DEFAULT: 45px;
+
+// Form Field object LESS mixins.
+// Include these mixins to change the behavior and/or appearance of the base object.
+
+// Standardize various form field CSS transitions
+.input_transition() {
+    .transition(
+        border-color ease-in-out 0.15s,
+        box-shadow ease-in-out 0.15s;
+    );
+}
+
+// Focus state box shadow used in the CSS transition
+.input_focus_box_shadow() {
+    .box-shadow(
+        inset 0 0 2px rgba(120, 171, 236, 0.75),
+        0 0 7px rgba(120, 171, 236, 0.75);
+    );
+}

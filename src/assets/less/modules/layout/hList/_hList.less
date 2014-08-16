@@ -1,0 +1,60 @@
+/*doc
+---
+title: Horizontal List
+name: hList
+category: layout
+---
+
+The Horizontal List layout object controls the horizontal separation of list items. This object has a predictable markup structure. The `.hList` base class is applied to either an `<ul>` or `<ol>` element. These elements only support one direct child, the `<li>`.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.hList`                    | Base class.
+
+The Horizontal List object has a number of modifying classes to alter the spacing between its children `<li>`.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.hList_tight`              | Mixin class, reduces margin between elements
+`.hList_loose`              | Mixin class, increases margin between elements
+`.hList_divided`            | Mixin class, increases margin between elements and adds vertical divider between elements
+
+```
+<ul class="hList">
+    <li>
+        <!-- Content here. -->
+    </li>
+    <li>
+        <!-- Content here. -->
+    </li>
+</ul>
+```
+*/
+.hList {
+    .clearfix();
+    font-size: 0;
+}
+
+.hList > * {
+    display: inline-block;
+    .font();
+}
+
+.hList > * + * {
+    margin-left: 16px;
+}
+
+/* Modifying Classes */
+
+.hList_tight > * + * {
+    margin-left: 8px;
+}
+
+.hList_loose > * + * {
+    margin-left: 24px;
+}
+.hList_divided > * + * {
+    margin-left: 12px;
+    padding-left: 12px;
+    border-left: 1px solid;
+}

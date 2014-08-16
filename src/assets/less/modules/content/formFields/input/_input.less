@@ -1,0 +1,82 @@
+/*doc
+---
+title: Input
+name: input
+category: content
+---
+
+Content styles for `<input>` form elements. Form inputs are built to fill the width their parent container. Box-sizing is used to allow for consistent and more maintainable code, i.e. using `width: 100%;` combined with `padding`.
+
+Class                       | Description
+----------------------------| ---------------------------------------------------------------
+`.input`                    | base object name, applied to all `<input>` elements.
+`.input_search`             | extension for `type="search"` input elements.
+
+## Default Input
+
+```html_example
+<input class="input" type="text" placeholder="default input" />
+```
+
+## Search Input
+
+```html_example
+<input class="input input_search" type="search" placeholder="search input" />
+```
+
+## Input Mixins:
+
+Class                               | Description
+------------------------------------| -------------------------------------------------------
+`.mix-input_uppercasePlaceholder`   | Mixin to make the placeholder text uppercase
+`.mix-input_lightPlaceholder`       | Mixin to make the placeholder text lighter
+
+```html_example
+<ol class="formList">
+    <li>
+        <input class="input mix-input_uppercasePlaceholder" type="text" placeholder="Uppercase Placeholder" />
+    </li>
+    <li>
+        <input class="input mix-input_lightPlaceholder" type="text" placeholder="Light Placeholder" />
+    </li>
+</ol>
+```
+*/
+
+@import "../_helpers";
+
+.input {
+    width: 100%;
+    padding: 12px 14px 11px;
+    margin: 0;
+    border: 1px solid @COLORS_FORM_INPUT_BORDER_DEFAULT;
+    color: @COLORS_DEFAULT;
+    background-color: @COLORS_FORM_INPUT_BACKGROUND;
+    .font();
+    .border-radius();
+    .box-shadow();
+    .box-sizing();
+    .input_transition();
+    .placeholder();
+    .appearance(none);
+}
+
+.input:focus {
+    outline: 0;
+    border-color: @COLORS_FORM_INPUT_BORDER_FOCUS;
+    .input_focus_box_shadow();
+}
+
+.input_search {
+    .appearance(none);
+    .placeholder();
+}
+
+/* Input Mixins: placeholder alterations */
+.mix-input_uppercasePlaceholder {
+    .placeholder(@text-transform: uppercase);
+}
+
+.mix-input_lightPlaceholder {
+    .placeholder(@color: @COLORS_FORM_PLACEHOLDER);
+}

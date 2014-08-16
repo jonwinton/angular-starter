@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+    <head>
+        <!-- META DATA -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
+        <title>Tribune Digital Styleguide: <%= title %></title>
+
+        <!-- ICONS -->
+        <link rel="shortcut icon" type="image/ico" href="assets/media/images/favicon.ico" />
+
+        <!-- EXTERNAL FONTS -->
+        <link rel="stylesheet" media="screen, projection" href="//fonts.googleapis.com/css?family=Open+Sans:200italic,300italic,400italic,700italic,200,300,400,700" />
+
+        <!-- EXTERNAL ICONS -->
+        <link rel="stylesheet" media="screen, projection" href="assets/vendor/fontawesome/css/font-awesome.css" />
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" media="screen, projection" href="assets/styles/modern.css">
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" type="text/css" media="screen, projection" href="assets/styles/legacy.css" />
+        <![endif]-->
+
+        <!-- STYLEGUIDE STYLESHEETS -->
+        <link rel="stylesheet" media="screen, projection" href="static/styleguide.css">
+        <link rel="stylesheet" media="screen, projection" href="static/code.css">
+    </head>
+    <body class="styleguide">
+
+    <h2 class="hdg hdg_h2"><%= title %> objects</h2>
+    <ul class="vList">
+        <% @categories.each do |category, file_name| %>
+            <li>
+                <a href="<%= file_name %>"><%= category %></a>
+            </li>
+        <% end %>
+    </ul>
+
+        <% @blocks.each do |b| %>
+            <li>
+                <a href="#<%= b[:name] %>"><%= b[:title] %></a>
+            </li>
+        <% end %>
+    </ul>

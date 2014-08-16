@@ -1,0 +1,72 @@
+/*doc
+---
+title: Input Appended
+name: inputAppended
+category: content
+---
+
+Content styles for `<input>` form elements. Form inputs are built to fill the width their parent container. Box-sizing is used to allow for consistent and more maintainable code, i.e. using `width: 100%;` combined with `padding`.
+
+Class                       | Description
+----------------------------| ---------------------------------------------------------------
+`.inputAppended`              | base object name, applied to all `<input>` elements.
+`.input_search`             | extension for `type="search"` input elements.
+
+## Default Input
+
+```html_example
+<div class="inputAppended">
+    <div class="inputAppended-input">
+        <input class="input" type="text" placeholder="default input" />
+    </div>
+    <div class="inputAppended-btn">
+        <button class="btn" type="button">Button Text</button>
+    </div>
+</div>
+
+```
+
+## Input Mixins:
+
+Class                               | Description
+------------------------------------| -------------------------------------------------------
+`.mix-input_uppercasePlaceholder`   | Mixin to make the placeholder text uppercase
+`.mix-input_lightPlaceholder`       | Mixin to make the placeholder text lighter
+
+```html_example
+<ol class="formList">
+    <li>
+        <input class="input mix-input_uppercasePlaceholder" type="text" placeholder="Uppercase Placeholder" />
+    </li>
+    <li>
+        <input class="input mix-input_lightPlaceholder" type="text" placeholder="Light Placeholder" />
+    </li>
+</ol>
+```
+*/
+
+.inputAppended {
+    display: table;
+    width: 100%;
+}
+
+.inputAppended > * {
+    display: table-cell;
+}
+
+
+/* Input Appended: Button Cell */
+.inputAppended-btn {
+    width: 33.3333%;
+}
+
+.inputAppended-btn .btn {
+    white-space: nowrap;
+}
+
+/* Input Appended: Input Cell */
+.inputAppended-input .input {
+    .border-radius(4px 0 0 4px);
+    border-right: none;
+    padding: 13px 14px 11px; /* Adding one px padding on top to make the button and input align properly */
+}

@@ -1,0 +1,17 @@
+<li
+    class="accordion-item"
+    ng-class="{'accordion-item_separated': isOpen && separated, 'isActive': isOpen}">
+    <div class="accordion-item-hd" ng-click="toggle(title)">
+        <div class="accordion-item-hd-title" ng-bind="title"></div>
+        <div class="accordion-item-hd-icon">
+            <i class="fa"
+                ng-class="{
+                    'fa-arrow-circle-right': !isOpen,
+                    'fa-arrow-circle-down': isOpen
+                    }"></i>
+            </div>
+        </div>
+        <div class="accordion-item-bd" ng-class="{'isVisuallyHidden': !isOpen, 'accordion-item-bd_transparent': transparent}"
+            ng-transclude>
+        </div>
+</li>

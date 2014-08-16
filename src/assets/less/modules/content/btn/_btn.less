@@ -1,0 +1,163 @@
+/*doc
+---
+title: Button
+name: btn
+category: content
+---
+
+Buttons provide a visual indicator for user actions on the page. Buttons can be created using a variety of HTML elements in order to preserve the correct semantic meaning of the use case. Buttons also come in a variety of colors and states, as described below.
+
+Class                       | Description
+----------------------------| ---------------------------------------------------------------
+`.btn`                      | Base object.
+`.btn_primary`              | Base extension for a primary action.
+`.btn_secondary`            | Base extension for a secondary action.
+`.btn_ancillary`            | Base extension for a ancillary/supportive action to the primary action.
+`.btn-loader`               | Child element, intended to hold a state-activated element (like a spinner icon). This element is hidden by default.
+
+## Default Button:
+A button can be created using a number of HTML elements. The default is a `<button>` element.
+
+```html_example
+<button class="btn" type="button">button</button>
+```
+
+## HTML Elements Options:
+Additionally, `<input>` and `<a>` elements can be used as necessary to increase the semantic meaning of the HTML.
+
+```html_example
+<ul class="vList">
+    <li>
+        <input class="btn" type="submit" name="s" value="Input" />
+    </li>
+    <li>
+        <a class="btn" href="#">Link</a>
+    </li>
+</ul>
+```
+
+## Button Extensions:
+Add an extension to the base element to alter the appearance of the button to create user interaction hierarchy.
+
+```html_example
+<ul class="vList">
+    <li>
+        <button class="btn btn_primary" type="button">Primary</button>
+    </li>
+    <li>
+        <button class="btn btn_secondary" type="button">Secondary</button>
+    </li>
+    <li>
+        <button class="btn btn_ancillary" type="button">Ancillary</button>
+    </li>
+</ul>
+```
+
+## Button Mixins: Widths
+If a button should only be as wide as it's content, use one of the following mixins to alter the button width.
+
+Class                       | Description
+----------------------------| ---------------------------------------------------------------
+`.mix-btn_autoWidth`        | Mixin for an auto-width button.
+
+```html_example
+<button class="btn mix-btn_autoWidth" type="button">Auto Width</button>
+```
+
+## Button Mixins: States
+In order to provide visual feedback to a user, some buttons change state while the site is interacting with the server. Add the following state mixins as necessary to provide this feedback.
+
+### Loading Button
+
+By default, the `.btn-loader` element is hidden. By applying `.isLoading` via Javascript, the child loader icon is displayed.
+
+### Icon Button
+
+Icon Buttons have markup requirements for proper rendering. Use a `<button>` tag or an `<a>` tag as the outer element. An `<i>` is placed inside as a child element. A self-closing element, like an `<input />` cannot be used for an Icon Button.
+
+In both cases, wrapping the text portion of the button with a `<span>` is optional, but recommended.
+
+Class                       | Description
+----------------------------| ---------------------------------------------------------------
+`.isLoading`                | State class signifying a loading event was triggered by the button.
+`.hasIcon`                  | State class signifying this element contains an icon.
+
+```html_example
+<button class="btn isLoading" type="button">
+    <span class="btn-loader">
+        <i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span>loading</span>
+</button>
+```
+
+```html_example
+<button class="btn hasIcon" type="button">
+    <span>Button With Icon</span>
+    <i class="fa fa-angle-right"></i>
+</button>
+```
+*/
+
+.btn {
+    position: relative; // Used for positioning child elements or pseudo-elements
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 12px 10px 11px 10px;
+    background-color: @COLORS_MEDIUM_GRAY;
+    color: #ffffff;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    .font(@size: 16px);
+    .box-sizing();
+    .appearance(none);
+    .border-radius(0);
+}
+
+/* Button Extensions: */
+.btn_primary {
+    background-color: @COLORS_BRAND_ROSE;
+}
+
+.btn_secondary {
+    background-color: @COLORS_BRAND_TEAL;
+}
+
+.btn_ancillary {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: @COLORS_LIGHT_GRAY;
+    color: @COLORS_LINK;
+    text-transform: capitalize;
+    .font(@size: @FONT_SIZE_SMALL);
+}
+
+/* Button Mixins: Widths */
+.mix-btn_autoWidth {
+    width: auto;
+}
+
+/* Child element of .btn that holds a state-actived icon. Activated by adding .isLoading to the .btn */
+.btn-loader {
+    display: none;
+}
+
+/* Button Mixins: States */
+.btn.isLoading > .btn-loader {
+    display: inline-block;
+}
+
+/* Button Mixins: Icon Buttons
+ * .fa is a Font Awesome icon class
+ */
+.btn.hasIcon > .fa {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -8px; /* Needs to be half the font-size of the .btn class */
+}

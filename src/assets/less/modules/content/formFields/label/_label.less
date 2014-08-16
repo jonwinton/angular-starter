@@ -1,0 +1,56 @@
+/*doc
+---
+title: Label
+name: label
+category: content
+---
+
+Label documentation.
+
+Class                       | Description
+--------------------------- | ---------------------------------------------------------------
+`.label`                    | Base class.
+`.label_sm`                 | Base extension that alters the font-size property.
+`.label_lg`                 | Base extension that alters the font-size property.
+`.mix-label_hasCheckbox`    | Mixin that is applied when a `<label>` contains a `<input type="checkbox" />` element.
+`.mix-label_emphasis`       | Mixin that alters the appearance of the label.
+
+```html_example
+<label class="label" for="">Label</label>
+```
+
+```html_example
+<label class="label mix-label_emphasis" for="">Label</label>
+```
+
+```html_example
+<label class="label mix-label_emphasis" for="">Label</label>
+<span>Additional information.</span>
+```
+*/
+
+.label {
+    // TODO: need to add base styling once the visual designs are done for this element.
+}
+
+.label_sm {
+    font-size: @FONT_SIZE_SMALL;
+}
+
+.label_lg {
+    font-size: 16px;
+}
+
+.mix-label_hasCheckbox {
+    display: inline-block;
+    margin-left: 18px;
+}
+
+.mix-label_hasCheckbox > .checkbox {
+    margin-left: -18px;
+}
+
+.mix-label_emphasis {
+    font-weight: e(@FONT_WEIGHT_BOLD);
+    color: #000000;
+}

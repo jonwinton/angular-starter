@@ -1,0 +1,221 @@
+/*doc
+---
+title: Accordion
+name: accordion
+category: component
+---
+
+An AngularJS Component.
+
+## Basic Accordion HTML structure:
+
+Class                         | Description
+----------------------------- | ---------------------------------------------------------------
+`.accordion`                  | Base class.
+`.accordion_separated`        | Base class extension providing vertical separation between accordion items.
+`.accordion-item`             | Child element.
+`.accordion-item-hd`          | Child element header. This element is the trigger for the target content.
+`.accordion-item-hd_cta`      | Modifying class of the child element that changes background color and text-alignment.
+`.accordion-item-hd_minHeight`| Modifying class of the child element that adds a min-height to the child
+`.accordion-item-hd-title`    | Child element that styles the title of the accordion item.
+`.accordion-item-hd-icon`     | Child element container for a Font Awesome icon.
+`.accordion-item-bd`          | Child element body. This element collapses/expands in response to the trigger.
+
+## Custom Attributes
+
+Custom attributes can be applied to the wrapping `<div>` with the `nrd-accordion` attribute. These attributes affect the color, text alignment, height and space between accordion elements. None of these custom attrbutes are dependent upon one another and can be mixed and matched to achieve the proper accordion styling.
+
+Attribute                   | Description
+--------------------------- | ---------------------------------------------------------------
+`nrd-accordion`             | Custom AngularJS attribute that initiates the `AccordionDirective`
+`ng-cloak`                  | Native AngularJS attribute that hides the entire component from view while it is constructing.
+`separted`                  | Applies the `.accordion_separated` class to the `.accordion` element which increases the margin between accordion elements
+`minheight`                 | Applies a min-height style to each of the `.accordion-item-hd` elements within the accordion with `.accordion-item_separated`
+`cta`                       | Applies the `.accordion-item-hd_cta` modifying class to each `.accordion-item-hd` element to adjust text alignment and background-color
+
+```
+<div nrd-accordion
+     ng-cloak>
+    <ol class="accordion">
+        <li nrd-accordion-item="Lorem Ipsum"
+            trigger="currentItem">
+            <!-- Content here. -->
+        </li>
+        <li nrd-accordion-item="Lorem Ipsum Esquiat"
+            trigger="currentItem">
+            <!-- Content here. -->
+        </li>
+    </ol>
+</div>
+```
+
+
+## Accordion Item
+
+The Accordion Item is a directive inside the Accordion directive which is responsible for handling the functionality of each individual item in the accordion when clicked.
+
+The Accordion Item is initialized by applying the `nrd-accordion-item` attribute to a `<li>` element within the `nrd-accordion`. While this initializes the directive, other attributes are required for proper functionality. Reference the following table for a list of attributes available to this directive:
+
+Attribute                   | Description
+--------------------------- | ---------------------------------------------------------------
+`nrd-accordion-item`        | Custom AngularJS attribute that initiates the `AccordionItemDirective`; the value passed into this attribute will be populated in the `.accordion-item-hd-title` element
+`trigger`                   | A required attribute which is used to properly open the accordion item's content when it is clickedl
+`spaced`                    | Optional attribute which will apply the `.accordion-item_separated` class to a `.accordion-item` when it is active (open).
+
+
+```
+<li nrd-accordion-item="Lorem Ipsum"
+    trigger="currentItem"
+    class="accordion-item">
+    <!-- Content here. -->
+</li>
+```
+
+## Example Accordions
+
+```html_example
+<div nrd-accordion
+    ng-cloak>
+    <ol class="accordion">
+        <li nrd-accordion-item="Lorem ipsum"
+            trigger="currentItem">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+        <li nrd-accordion-item="Lorem ipsum dolor"
+            trigger="currentItem">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+    </ol>
+</div>
+```
+
+Used on the login page.
+
+```html_example
+<div nrd-accordion
+     separated
+     cta
+     ng-cloak>
+    <ol class="accordion">
+        <li nrd-accordion-item="Lorem ipsum"
+            trigger="currentItem"
+            separated
+            transparent>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+        <li nrd-accordion-item="Lorem ipsum dolor"
+            trigger="currentItem"
+            separated
+            transparent>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+    </ol>
+</div>
+```
+
+Basic accordion with min-height applied to each accordion tab
+
+```html_example
+<div nrd-accordion
+    minheight
+    ng-cloak>
+    <ol class="accordion">
+        <li nrd-accordion-item="Lorem ipsum"
+            trigger="currentItem">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+        <li nrd-accordion-item="Lorem ipsum dolor"
+            trigger="currentItem">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+    </ol>
+</div>
+```
+*/
+
+////////////////////////////////////////////
+// Base Class
+////////////////////////////////////////////
+.accordion > * + * {
+    margin-top: 1px;
+    .clearfix();
+}
+
+.accordion_separated > * + * {
+    margin-top: 5px;
+}
+
+.accordion_notSeparated > * + * {
+    margin-top: 0px;
+}
+
+////////////////////////////////////////////
+// Accordion Item
+////////////////////////////////////////////
+.accordion-item_separated {
+    margin-bottom: 45px;
+}
+
+////////////////////////////////////////////
+// Accordion Item Hd
+////////////////////////////////////////////
+.accordion-item-hd {
+    .box-sizing();
+    display: table; /* Display table used to achieve proper vertical alignment of content */
+    width: 100%;
+    background-color: @COLORS_MEDIUM_GRAY;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 0 9px;
+}
+
+/* Display table-cell and vertical alignment applied to
+ * vertically center content in the middle of the element.
+ */
+.accordion-item-hd > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.accordion-item-hd-title {
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.accordion-item-hd-icon {
+    font-size: 20px;
+    padding-right: 8px;
+    text-align: right;
+    width: 24px;
+    line-height: 0;
+}
+
+// Accordion Item Hd Extensions
+.accordion-item-hd_minHeight {
+    min-height: 52px;
+}
+
+.accordion-item-hd_cta {
+    background-color: @COLORS_BRAND_ROSE;
+    padding: 10px 0 9px 32px;
+}
+
+.accordion-item-hd_cta > .accordion-item-hd-title {
+    text-align: center;
+}
+
+////////////////////////////////////////////
+// Accordion Item Bd
+////////////////////////////////////////////
+.accordion-item-bd {
+    background-color: @COLORS_LIGHT_GRAY;
+    padding: 16px 9px;
+}
+
+.accordion-item-bd_transparent {
+    background-color: transparent;
+}
+
+.accordion-item-bd_cta {
+    padding: 16px 0;
+}
