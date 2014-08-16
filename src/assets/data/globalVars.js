@@ -24,14 +24,6 @@ define( function() {
 		"colors": {
 			"default": "#333333",
 			"darkGray": "#383838",
-			"mediumGray": "#515151",
-			"lightGray": "#eeeeee",
-			"link": "#2a6496",
-			"error": "#c9282d",
-			"brand": {
-				"rose": "#e15860",
-				"teal": "#0d9b8c"
-			},
 			"form": {
 				"placeholder": "#aaaaaa",
 				"inputBorderDefault": "#acacac",
