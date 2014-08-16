@@ -1,6 +1,4 @@
-# TRIBUNEDIGITAL.fsbo
-
-> Responsive Website
+> Personal Tester
 
 ## Installation
 * Open Terminal.
