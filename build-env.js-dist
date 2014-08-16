@@ -19,7 +19,7 @@ var Config = {
      * @property URL_SITE
      * @type String
      */
-    URL_SITE: '//athens.sierrabravo.net',   // protocol-relative address if working on Athens
+    URL_SITE: '//localhost:8888',
     // URL_SITE: '//localhost:8888',        // protocol-relative address if working locally
     // URL_SITE: 'https://www.example.com', // absolute address
 
